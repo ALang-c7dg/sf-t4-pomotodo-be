@@ -23,7 +23,7 @@ describe("TodoData Service", () => {
   });
 
   // remove the 'x' before 'it' to "turn on" the test
-  xit("returns all the todo-data saved", async () => {
+  it("returns all the todo-data saved", async () => {
     const todo1 = {
       name: "Add entry",
       desc: "Personal log",
@@ -44,7 +44,7 @@ describe("TodoData Service", () => {
     expect(actual.order.length).toEqual(2);
   });
 
-  xit("updates the todo order", async () => {
+  it("updates the todo order", async () => {
     const todo1 = {
       name: "Add entry",
       desc: "Personal log",
@@ -69,7 +69,7 @@ describe("TodoData Service", () => {
     expect(Array.from(actual.order)).toEqual([returnedTodo2.order[1], returnedTodo2.order[0]]);
   })
 
-  xit("updates the todo name and desc", async () => {
+  it("updates the todo name and desc", async () => {
     const todo1 = {
       name: "Add entry",
       desc: "Personal log",
@@ -85,11 +85,13 @@ describe("TodoData Service", () => {
     });
 
     const actual = await todoDataService.getTodos();
+    console.log("This is the actual")
+    console.log(actual)
     expect(actual.todos[actual.order[0]].name).toEqual("New Name");
     expect(actual.todos[actual.order[0]].dateCompleted).toEqual("1622083278575");
   })
 
-  xit('deletes the todo, given id', async () => {
+  it('deletes the todo, given id', async () => {
     const todo1 = {
       name: "Add entry",
       desc: "Personal log",

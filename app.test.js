@@ -8,7 +8,7 @@ const App = require("./app");
 const app = new App();
 jest.useFakeTimers();
 
-xdescribe("Test public routes", () => {
+describe("Test public routes", () => {
   beforeEach(async () => {
     await dynamoClient.delete({ TableName, Key: { id: "0" } }).promise();
   });
@@ -17,7 +17,7 @@ xdescribe("Test public routes", () => {
     return request(app).get("/health").expect(200);
   });
 
-  xit("should add a todo, returning it in an order and object mapped by id", () => {
+  it("should add a todo, returning it in an order and object mapped by id", () => {
     return request(app)
       .post("/api/todo-data")
       .send({
@@ -57,7 +57,7 @@ xdescribe("Test public routes", () => {
       });
   });
   
-  xit("should return all the todos saved, with the order", () => {
+  it("should return all the todos saved, with the order", () => {
     const todo1 = {
       name: "Add entry",
       desc: "Personal log",
@@ -87,7 +87,7 @@ xdescribe("Test public routes", () => {
       });
   });
 
-  xit("should update the order of todos", () => {
+  it("should update the order of todos", () => {
     const todo1 = {
       name: "Add entry",
       desc: "Personal log",
@@ -128,7 +128,7 @@ xdescribe("Test public routes", () => {
       });
   });
 
-  xit("should update a todo by id", () => {
+  it("should update a todo by id", () => {
     const todo1 = {
       name: "Add entry",
       desc: "Personal log",
@@ -162,7 +162,7 @@ xdescribe("Test public routes", () => {
       });
   });
 
-  xit("should delete a todo by id", () => {
+  it("should delete a todo by id", () => {
     const todo1 = {
       name: "Add entry",
       desc: "Personal log",

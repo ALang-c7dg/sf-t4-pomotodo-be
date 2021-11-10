@@ -31,7 +31,7 @@ Two test suites have been created to ensure a reliable refactor of this applicat
 
 ```json
 {
-  "id" : "0"
+  "id" : "0",
   "order": [
     "57f78108-4704-41a9-989b-3721ceedfad1"
   ],
